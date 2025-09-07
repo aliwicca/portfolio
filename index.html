@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ali Mostafa Senior IOS Developer — Portfolio</title>
+  <meta name="description" content="Professional portfolio showcasing projects, skills, and experience in iOS and web development." />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+#experience .experience-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+#experience .experience-item .location,
+#experience .experience-item .period {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-right: 10px;
+}
+#experience .experience-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+  color: var(--text);   /* ✅ هيشتغل في light/dark */
+}
+
+#experience .experience-item .location,
+#experience .experience-item .period {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: var(--muted);  /* ✅ للـ meta data */
+  margin-right: 10px;
+}
+
+#experience .tasks li {
+  margin-bottom: 6px;
+  color: var(--text);   /* ✅ هيبان في كل الأوضاع */
+  position: relative;
+  padding-left: 16px;
+}
+
+#experience .tasks li {
+  margin-bottom: 6px;
+  color: var(--text);
+  position: relative;
+  padding-left: 16px;
+}
+
+
+    #experience {
+  margin-top: 60px;
+}
+
+#experience .experience-item {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;  
+}
+
+ 
+ 
+#experience .tasks {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 8px;
+}
+
+ 
+
+#experience .tasks li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #0078ff;
+}
+
+    
+    :root {
+      --bg: #0b0c10;
+      --surface: #111318;
+      --text: #e6e8ef;
+      --muted: #a6adbb;
+      --primary: #6ee7b7;
+      --primary-700: #34d399;
+      --ring: 0 0 0 3px rgba(110, 231, 183, .35);
+      --card: #0f1115;
+      --border: #21242c;
+      --grad: radial-gradient(1200px 600px at 20% -20%, rgba(110, 231, 183,.18), rgba(59,130,246,.15) 30%, transparent 60%),
+              radial-gradient(900px 500px at 110% 10%, rgba(147,197,253,.1), transparent 40%);
+    }
+    :root.light {
+      --bg: #f9fafb;
+      --surface: #ffffff;
+      --text: #0b1220;
+      --muted: #475569;
+      --primary: #0ea5e9;
+      --primary-700: #0284c7;
+      --ring: 0 0 0 3px rgba(14, 165, 233, .25);
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --grad: radial-gradient(1000px 500px at -10% -20%, rgba(14,165,233,.12), transparent 40%),
+              radial-gradient(900px 600px at 120% -10%, rgba(110,231,183,.15), transparent 50%);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      background-image: var(--grad);
+      background-attachment: fixed;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { width: min(1100px, 92%); margin: 0 auto; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: saturate(140%) blur(8px);
+      background: color-mix(in oklab, var(--bg) 80%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .2px; }
+   .logo {
+  width: 40px;      /* حجم العرض */
+  height: 40px;     /* حجم الطول */
+  border-radius: 8px;  /* تخليها 50% لو عايزها دايرة */
+  background: url("https://img.icons8.com/?size=512&id=20821&format=png") no-repeat center/cover;
+  border: 1px solid var(--border);  /* خط حوالين الصورة */
+}
+
+    nav ul { display: flex; list-style: none; gap: 18px; margin: 0; padding: 0; }
+    nav a { padding: 8px 12px; border-radius: 10px; color: var(--muted); font-weight: 500; }
+    nav a:hover { background: color-mix(in oklab, var(--surface), var(--bg) 70%); color: var(--text); }
+    .cta { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 12px; background: var(--primary); color: #0b1220; font-weight: 700; }
+    .cta:hover { background: var(--primary-700); }
+
+    /* Hero */
+    .hero { padding: clamp(48px, 8vw, 96px) 0; display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: start; }
+    .hero h1 { font-size: clamp(32px, 5vw, 56px); line-height: 1.1; margin: 0 0 12px; }
+    .hero p { color: var(--muted); font-size: clamp(16px, 2.4vw, 18px); margin: 0 0 22px; }
+    .hero .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-weight: 600; }
+    .btn:hover { box-shadow: var(--ring); }
+    .btn.primary { background: var(--primary); color: #0b1220; border-color: transparent; }
+    .btn.primary:hover { filter: brightness(0.97); }
+
+    .badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border: 1px solid var(--border); border-radius: 999px; color: var(--muted); font-size: 13px; margin-bottom: 14px; background: color-mix(in oklab, var(--surface), var(--bg) 70%); }
+    .avatar { position: relative; width: 100%; aspect-ratio: 1; border-radius: 24px; background: radial-gradient(120px 120px at 30% 30%, rgba(255,255,255,.06), transparent), linear-gradient(180deg, color-mix(in oklab, var(--surface), var(--bg) 50%), var(--card)); border: 1px solid var(--border); display: grid; place-items: center; overflow: hidden; }
+
+    .avatar .emoji { font-size: clamp(64px, 11vw, 120px); }
+
+    /* Section */
+    section { padding: clamp(36px, 7vw, 72px) 0; }
+    .sec-title { font-size: clamp(22px, 3.2vw, 32px); margin: 0 0 14px; }
+    .sec-sub { color: var(--muted); margin: 0 0 26px; }
+
+    /* Cards grid */
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+    .card { grid-column: span 12; background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 18px; transition: transform .2s ease, box-shadow .2s ease; }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,.22); }
+
+    /* Projects */
+    .filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+    .chip { padding: 8px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--muted); font-weight: 600; cursor: pointer; }
+    .chip[aria-pressed="true"] { background: var(--primary); color: #0b1220; border-color: transparent; }
+
+    .project { display: grid; grid-template-columns: 1fr 1.6fr; gap: 16px; align-items: start; }
+    .project h3 { margin: 0 0 6px; font-size: 20px; }
+    .project p { margin: 0 0 10px; color: var(--muted); }
+    .project .meta { display: flex; gap: 10px; flex-wrap: wrap; }
+    .tag { font-size: 12px; padding: 6px 10px; border-radius: 999px; border: 1px dashed var(--border); color: var(--muted); }
+    .project .links { margin-top: 10px; display: flex; gap: 10px; }
+
+    .thumb { aspect-ratio: 16/9; background: linear-gradient(135deg, rgba(110,231,183,.18), rgba(14,165,233,.18)); border: 1px solid var(--border); border-radius: 14px; display: grid; place-items: center; color: var(--muted); font-weight: 700; letter-spacing: .4px; }
+
+    /* Skills */
+    .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .skill { padding: 14px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); display: flex; align-items: center; justify-content: space-between; }
+    .skill b { font-weight: 700; }
+
+    /* Timeline */
+    .timeline { position: relative; padding-left: 24px; }
+    .timeline::before { content: ""; position: absolute; left: 6px; top: 0; bottom: 0; width: 2px; background: var(--border); border-radius: 2px; }
+    .tl-item { position: relative; margin: 16px 0; padding-left: 10px; }
+    .tl-item::before { content: ""; position: absolute; left: -2px; top: 8px; width: 10px; height: 10px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 0 4px color-mix(in oklab, var(--primary), transparent 70%); }
+    .tl-item h4 { margin: 0 0 4px; }
+    .tl-item small { color: var(--muted); }
+
+    /* Contact */
+    form { display: grid; gap: 12px; }
+    .field { display: grid; gap: 6px; }
+    input, textarea { padding: 12px 14px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font: inherit; }
+    input:focus, textarea:focus { outline: none; box-shadow: var(--ring); }
+    textarea { min-height: 120px; resize: vertical; }
+
+    /* Footer */
+    footer { padding: 26px 0 46px; color: var(--muted); border-top: 1px solid var(--border); margin-top: 24px; }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; }
+      .project { grid-template-columns: 1fr; }
+      .skills { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 620px) {
+      nav ul { display: none; }
+      .skills { grid-template-columns: 1fr; }
+    }
+    /* Animations */
+    .reveal { opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav" role="navigation" aria-label="Main">
+      <a class="brand" href="#home" aria-label="Go to top">
+        <span class="logo" aria-hidden="true"></span>
+      <span style="display:flex; flex-direction:column; line-height:1.2;">
+  Ali Mostafa
+  <small style="font-weight:400; color:var(--muted);">Senior iOS Developer</small>
+</span>
+
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#competencies">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <!-- <li><a href="#contact">Contact</a></li> -->
+        </ul>
+      </nav>
+      <div style="display:flex; gap:10px; align-items:center;">
+        <button id="themeToggle" class="btn" aria-pressed="false" aria-label="Toggle theme">🌙 Theme</button>
+        <a class="cta" href="#contact">Hire Me</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+<section class="container hero reveal">
+  <div>
+    <!-- Badge -->
+    <div class="badge">🚀 iOS Engineer — 4+ Years of Experience</div>
+
+    <!-- Main Title -->
+    <h1>
+      Crafting <span style="color:var(--primary);">Scalable Applications</span><br>
+      with Elegant & Intuitive Interfaces
+    </h1>
+
+    <!-- Intro Paragraph -->
+    <p>
+      Senior iOS Developer specializing in architecting and building robust, high-performance applications. 
+      With deep expertise in the iOS ecosystem and a strong foundation in software engineering principles, 
+      I transform complex ideas into seamless and scalable user experiences.
+    </p>
+<!-- Core Competencies -->
+<!-- <section class="container reveal" style="margin: 60px 0;">
+  <h2 class="sec-title">Core Competencies</h2>
+  <div class="competencies">
+    <div class="competency"><b>Languages:</b> Swift</div>
+    <div class="competency"><b>Architecture:</b> MVVM, MVVM-C, Clean Architecture, VIPER</div>
+    <div class="competency"><b>Concurrency:</b> Async/Await, Combine, Operation Queue</div>
+    <div class="competency"><b>Persistence:</b> Realm, SwiftData</div>
+    <div class="competency"><b>UI Frameworks:</b> UIKit, SwiftUI</div>
+    <div class="competency"><b>Realtime & Backend:</b> Socket.IO, Firebase</div>
+    <div class="competency"><b>Maps & Location:</b> Google Maps SDK</div>
+    <div class="competency"><b>Best Practices:</b> SOLID, Design Patterns</div>
+    <div class="competency"><b>Reactive Programming:</b> RxSwift</div>
+  </div>
+</section> -->
+
+
+   
+    <!-- Actions -->
+    <div class="actions">
+      <a class="btn primary" href="#projects">🚀 See My Projects</a>
+      <a class="btn" href="resume.pdf" download>📄 Download Resume</a>
+<a class="btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=ali.mostafa.kassab2022@gmail.com" target="_blank">
+  ✉️ Contact Me
+</a>
+    </div>
+  </div>
+
+  <!-- Avatar -->
+<!-- Avatar -->
+<div class="avatar" aria-hidden="true">
+  <img src="images/me.jpeg" 
+       alt="Ali Mostafa Developer Avatar">
+</div>
+
+
+</section>
+
+
+
+    <section id="projects" class="container">
+      <h2 class="sec-title">Featured Projects</h2>
+      <p class="sec-sub">A selection of production apps and experiments. Filter by category.</p>
+
+      <div class="filters" role="toolbar" aria-label="Project filters">
+        <button class="chip" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" data-filter="ios">iOS</button>
+        <button class="chip" data-filter="web">Web</button>
+        <button class="chip" data-filter="api">API</button>
+      </div>
+
+      <div class="grid" id="projectGrid">
+        <!-- Project Card -->
+        <article class="card project reveal" data-tags="ios swift mvvm" data-type="ios">
+          <div>
+            <h3>Cab — Ride Hailing App</h3>
+            <p>Real-time location tracking, trip lifecycle, push notifications, and clean MVVM architecture. Firebase + Socket.IO.</p>
+            <div class="meta">
+              <span class="tag">Swift</span>
+              <span class="tag">MVVM</span>
+              <span class="tag">Firebase</span>
+            </div>
+            <div class="links">
+              <a class="btn" href="#" aria-label="View case study for Cab">Case Study</a>
+              <a class="btn" href="#" aria-label="Open source code for Cab">Code</a>
+            </div>
+          </div>
+          <div class="thumb">CAB • iOS</div>
+        </article>
+
+        <article class="card project reveal" data-tags="web react reservations" data-type="web">
+          <div>
+            <h3>Tavolo — Reservations Platform</h3>
+            <p>Full‑stack system for booking tables at restaurants & hotels. Admin dashboards, search, and analytics.</p>
+            <div class="meta">
+              <span class="tag">React</span>
+              <span class="tag">Node</span>
+              <span class="tag">PostgreSQL</span>
+            </div>
+            <div class="links">
+              <a class="btn" href="#" aria-label="Live demo for Tavolo">Live</a>
+              <a class="btn" href="#" aria-label="GitHub repo for Tavolo">Code</a>
+            </div>
+          </div>
+          <div class="thumb">TAVOLO • WEB</div>
+        </article>
+
+        <article class="card project reveal" data-tags="ios swiftui healthcare" data-type="ios">
+          <div>
+            <h3>Lavander Clinic — Search & Offers</h3>
+            <p>SwiftUI app with advanced search, offers tab pager, and Combine/Rx transitions. Clean architecture and unit tests.</p>
+            <div class="meta">
+              <span class="tag">SwiftUI</span>
+              <span class="tag">Combine</span>
+              <span class="tag">Unit Tests</span>
+            </div>
+            <div class="links">
+              <a class="btn" href="#">Screens</a>
+              <a class="btn" href="#">Code</a>
+            </div>
+          </div>
+          <div class="thumb">CLINIC • iOS</div>
+        </article>
+
+        <article class="card project reveal" data-tags="api swift networking" data-type="api">
+          <div>
+            <h3>Swift Networking Toolkit</h3>
+            <p>Type‑safe API layer using async/await, result builders, and robust decoding with retry & metrics.</p>
+            <div class="meta">
+              <span class="tag">Swift</span>
+              <span class="tag">Async/Await</span>
+              <span class="tag">URLSession</span>
+            </div>
+            <div class="links">
+              <a class="btn" href="#">Docs</a>
+              <a class="btn" href="#">Package</a>
+            </div>
+          </div>
+          <div class="thumb">TOOLKIT • API</div>
+        </article>
+      </div>
+  
+<section id="competencies" class="container">
+  <h2 class="sec-title">Core Competencies & Skills</h2>
+  <div class="skills reveal">
+    <div class="skill"><span>Swift / SwiftUI / UIKit</span><b>Expert</b></div>
+    <div class="skill"><span>Architecture (MVVM, MVVM-C, Clean Architecture, VIPER)</span><b>Advanced</b></div>
+    <div class="skill"><span>Concurrency (Async/Await, Combine, Operation Queue)</span><b>Advanced</b></div>
+    <div class="skill"><span>Realm / SwiftData</span><b>Advanced</b></div>
+    <div class="skill"><span>Socket.IO / Firebase</span><b>Advanced</b></div>
+    <div class="skill"><span>Google Maps SDK / Core Location</span><b>Advanced</b></div>
+    <div class="skill"><span>RxSwift & Reactive Programming</span><b>Advanced</b></div>
+    <div class="skill"><span>Performance Optimization & Instruments</span><b>Advanced</b></div>
+    <div class="skill"><span>Design Systems & Reusable Components</span><b>Advanced</b></div>
+    <div class="skill"><span>Version Control (Git)</span><b>Expert</b></div>
+    <div class="skill"><span>Jira</span><b>Advanced</b></div>
+  </div>
+</section>
+
+    <!-- <section id="experience" class="container">
+      <h2 class="sec-title">Experience</h2>
+      <p class="sec-sub">Highlights from recent roles.</p>
+      <div class="timeline reveal">
+        <div class="tl-item">
+          <h4>iOS Engineer — Saudi Startup (Remote)</h4>
+          <small>2024 — Present</small>
+          <p>Lead development of Cab app, integrating live tracking, notifications, and scalable architecture. Mentored team on MVVM & SOLID.</p>
+        </div>
+        <div class="tl-item">
+          <h4>Freelance Developer</h4>
+          <small>2022 — 2024</small>
+          <p>Delivered multiple client apps and dashboards. Focused on clean architecture, testing, and performance.</p>
+        </div>
+      </div>
+    </section> -->
+<!-- <section id="experience" class="container">
+  <h2 class="sec-title">Experience</h2>
+  <p class="sec-sub">Key projects and professional journey.</p>
+
+  <div class="timeline reveal"> -->
+    <!-- CAB App -->
+    <!-- <div class="tl-item">
+      <h4>CAB App (Uber-like Delivery Platform)</h4>
+      <small>Feb 2024 – Present</small>
+      <p>
+        Built an Uber-like app for delivering restaurants, people, and orders with live trip and request tracking.  
+        Enhanced skills in <b>problem-solving</b>, <b>Firebase</b>, <b>Alamofire</b>, and <b>MVVM architecture</b>.  
+        Fostered collaboration and professional growth.  
+        <a href="#" target="_blank">App Store Link</a>
+      </p>
+    </div> -->
+
+    <!-- Tavolo App -->
+    <!-- <div class="tl-item">
+      <h4>Tavolo App (Restaurant Reservation)</h4>
+      <small>Nov 2023 – Jan 2024</small>
+      <p>
+        Developed an app for discovering restaurants, checking availability, booking, and managing reservations.  
+        Included user profiles, reviews, notifications, and secure payments.  
+        <a href="#" target="_blank">App Store Link</a>
+      </p>
+    </div> -->
+
+    <!-- Delivery App -->
+    <!-- <div class="tl-item">
+      <h4>Delivery App (Quick Delivery)</h4>
+      <small>Jun 2023 – Oct 2023</small>
+      <p>
+        Created a comprehensive delivery platform with product catalog, payments, real-time tracking, customizable orders, ratings, reviews, and 24/7 support.  
+        Applied <b>real-time chat</b>, <b>Google Maps</b>, <b>Core Location</b>, <b>Firebase Messaging</b>, <b>Socket.IO</b>, and push notifications.  
+        <a href="#" target="_blank">App Store Link</a>
+      </p>
+    </div> -->
+
+    <!-- Al-Fatiha App -->
+    <!-- <div class="tl-item">
+      <h4>Al-Fatiha App (Quran Learning)</h4>
+      <small>Jan 2023 – May 2023</small>
+      <p>
+        App to improve Surat Al-Fatiha pronunciation with expert evaluation and continuous feedback.  
+        Used <b>MVC</b>, notifications, audio recording/playback, localization, and text control.  
+        <a href="#" target="_blank">App Store Link</a>
+      </p>
+    </div> -->
+
+    <!-- See My Result App -->
+    <!-- <div class="tl-item">
+      <h4>See-My-Result App</h4>
+      <small>Jun 2022 – Dec 2022</small>
+      <p>
+        Medical-focused app for analyzing test results and delivering actionable advice.  
+        Leveraged <b>WebView</b> for real-time data access and applied <b>MVC</b> for clean structure.  
+        <a href="#" target="_blank">GitHub Link</a>
+      </p>
+    </div> -->
+
+    <!-- Alborg App -->
+    <!-- <div class="tl-item">
+      <h4>Alborg App</h4>
+      <small>Jan 2022 – May 2022</small>
+      <p>
+        App integrated with healthcare ecosystem for diagnostics and treatment planning.  
+        Features real-time collaboration, test data integration, and streamlined UI.  
+        <a href="#" target="_blank">GitHub Link</a>
+      </p>
+    </div>
+  </div>
+</section> -->
+
+ <!-- <section id="contact" class="container">
+  <h2 class="sec-title">Contact</h2>
+  <p class="sec-sub">Let’s build something great together.</p>
+
+  <form action="mailto:ali.mostafa.kassab2022@gmail.com" 
+        method="POST" 
+        enctype="text/plain">
+        
+    <div class="field">
+      <label for="name">Name</label>
+      <input id="name" name="name" placeholder="Your name" required />
+    </div>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" placeholder="you@example.com" required />
+    </div>
+
+    <div class="field">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Tell me about your project" required></textarea>
+    </div>
+
+    <button class="btn primary" type="submit">Send</button>
+  </form>
+</section> -->
+<!-- <section id="experience" class="container">
+  <h2 class="sec-title">Experience</h2>
+  
+<div class="experience-item">
+  <h3>Senior iOS Developer — Al Almiya Alhura</h3>
+  <span class="location">Remote</span>
+  <span class="period">January 2025 – Present</span>
+  <ul class="tasks">
+    <li>Developed new iOS applications from scratch with scalable and maintainable architecture.</li>
+    <li>Refactored and fixed legacy projects, ensuring compatibility with modern iOS versions.</li>
+    <li>Revived outdated apps that were no longer functional due to deprecated APIs and frameworks.</li>
+    <li>Mentored and trained junior developers, improving team efficiency and knowledge sharing.</li>
+    <li>Acted as the primary assistant to the Team Leader in project planning and technical decisions.</li>
+  </ul>
+</div>
+
+
+  <div class="experience-item">
+  <h3>Med Senior iOS Developer — CAB</h3>
+  <span class="location">Saudi Arabia, Remotely</span>
+  <span class="period">February 2024 – January 2025</span>
+  <ul class="tasks">
+    <li>Led the complete refactoring and re-development of the company’s main iOS application.</li>
+    <li>Improved code structure, performance, and maintainability following MVVM and SOLID principles.</li>
+    <li>Integrated advanced features such as real-time location tracking, notifications, and media handling.</li>
+    <li>Collaborated remotely with the Saudi Arabia-based team to align development with business needs.</li>
+  </ul>
+</div>
+
+
+  <div class="experience-item">
+  <h3>Junior iOS Developer — ALEXON</h3>
+  <span class="location">Egypt</span>
+  <span class="period">January 2023 – January 2024</span>
+  <ul class="tasks">
+    <li>Developed and maintained multiple iOS applications using Swift and UIKit.</li>
+    <li>Collaborated with team members to implement new features and fix critical bugs.</li>
+    <li>Deployed and published applications on the Apple App Store, ensuring compliance with Apple guidelines.</li>
+    <li>Improved app performance, usability, and reliability through continuous updates.</li>
+  </ul>
+</div>
+
+
+  <div class="experience-item">
+    <h3>Junior iOS Developer — Al-Abdulaziz</h3>
+    <span class="period">January 2022 – May 2022</span>
+    <ul class="tasks">
+      <li>Contributed to the development of iOS applications using Swift.</li>
+      <li>Assisted in debugging and testing features to ensure high-quality performance.</li>
+      <li>Collaborated with senior developers to understand software development best practices.</li>
+    </ul>
+  </div>
+
+  <div class="experience-item">
+  <h3>Junior iOS Developer — Al-Fawadiya</h3>
+  <span class="location">Saudi Arabia, Remotely</span>
+  <span class="period">June 2022 – December 2022</span>
+  <ul class="tasks">
+    <li>Developed and maintained iOS applications using Swift and UIKit.</li>
+    <li>Implemented new features and fixed bugs to improve app performance and usability.</li>
+    <li>Worked remotely with a cross-functional team in Saudi Arabia, following Agile practices.</li>
+  </ul>
+</div>
+
+
+</section> -->
+<section id="experience" class="container">
+  <h2 class="sec-title">Experience</h2>
+
+  <div class="experience-item">
+    <h3>Senior iOS Developer — <span>Al Almiya Alhura</span></h3>
+    <div class="meta">
+      <span class="location">Remote</span> • 
+      <span class="period">January 2025 – Present</span>
+    </div>
+    <ul class="tasks">
+      <li>Developed new iOS applications from scratch with scalable and maintainable architecture.</li>
+      <li>Refactored and fixed legacy projects, ensuring compatibility with modern iOS versions.</li>
+      <li>Revived outdated apps that were no longer functional due to deprecated APIs and frameworks.</li>
+      <li>Mentored and trained junior developers, improving team efficiency and knowledge sharing.</li>
+      <li>Acted as the primary assistant to the Team Leader in project planning and technical decisions.</li>
+    </ul>
+  </div>
+
+  <div class="experience-item">
+    <h3>Mid-Level iOS Developer — <span>CAB</span></h3>
+    <div class="meta">
+      <span class="location">Saudi Arabia, Remote</span> • 
+      <span class="period">February 2024 – January 2025</span>
+    </div>
+    <ul class="tasks">
+      <li>Led the complete refactoring and re-development of the company’s main iOS application.</li>
+      <li>Improved code structure, performance, and maintainability following MVVM and SOLID principles.</li>
+      <li>Integrated advanced features such as real-time location tracking, notifications, and media handling.</li>
+      <li>Collaborated remotely with the Saudi Arabia-based team to align development with business needs.</li>
+    </ul>
+  </div>
+
+  <div class="experience-item">
+    <h3>Junior iOS Developer — <span>ALEXON</span></h3>
+    <div class="meta">
+      <span class="location">Egypt</span> • 
+      <span class="period">January 2023 – January 2024</span>
+    </div>
+    <ul class="tasks">
+      <li>Developed and maintained multiple iOS applications using Swift and UIKit.</li>
+      <li>Collaborated with team members to implement new features and fix critical bugs.</li>
+      <li>Deployed and published applications on the Apple App Store, ensuring compliance with Apple guidelines.</li>
+      <li>Improved app performance, usability, and reliability through continuous updates.</li>
+    </ul>
+  </div>
+
+  <div class="experience-item">
+    <h3>Junior iOS Developer — <span>Al-Fawadiya</span></h3>
+    <div class="meta">
+      <span class="location">Saudi Arabia, Remote</span> • 
+      <span class="period">June 2022 – December 2022</span>
+    </div>
+    <ul class="tasks">
+      <li>Developed and maintained iOS applications using Swift and UIKit.</li>
+      <li>Implemented new features and fixed bugs to improve app performance and usability.</li>
+      <li>Worked remotely with a cross-functional team in Saudi Arabia, following Agile practices.</li>
+    </ul>
+  </div>
+
+  <div class="experience-item">
+    <h3>Junior iOS Developer — <span>Al-Abdulaziz</span></h3>
+    <div class="meta">
+      <span class="period">January 2022 – May 2022</span>
+    </div>
+    <ul class="tasks">
+      <li>Contributed to the development of iOS applications using Swift.</li>
+      <li>Assisted in debugging and testing features to ensure high-quality performance.</li>
+      <li>Collaborated with senior developers to understand software development best practices.</li>
+    </ul>
+  </div>
+</section>
+
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;">
+      <span>© <span id="year"></span> Ali Mostafa. All rights reserved.</span>
+      <div style="display:flex; gap:12px;">
+        <a href="#" aria-label="GitHub">GitHub</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="Twitter">X</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle with localStorage
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme === 'light') root.classList.add('light');
+    function setPressed() {
+      const isLight = root.classList.contains('light');
+      themeToggle.setAttribute('aria-pressed', String(isLight));
+      themeToggle.textContent = (isLight ? '☀️' : '🌙') + ' Theme';
+    }
+    setPressed();
+    themeToggle.addEventListener('click', () => {
+      root.classList.toggle('light');
+      localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
+      setPressed();
+    });
+
+    // Smooth reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('show');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: .15 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Project filtering
+    const filters = document.querySelectorAll('.chip');
+    const cards = document.querySelectorAll('.project');
+    filters.forEach(btn => btn.addEventListener('click', () => {
+      filters.forEach(b => b.setAttribute('aria-pressed', 'false'));
+      btn.setAttribute('aria-pressed', 'true');
+      const type = btn.dataset.filter;
+      cards.forEach(card => {
+        const show = type === 'all' || card.dataset.type === type;
+        card.style.display = show ? '' : 'none';
+      });
+    }));
+
+    // Simple contact handler (client-side demo)
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      // TODO: Replace with your backend endpoint (fetch('/api/contact', { ... }))
+      status.textContent = 'Thanks, ' + (data.name || 'friend') + '! I\'ll get back to you soon.';
+      form.reset();
+    });
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
