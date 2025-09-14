@@ -155,8 +155,21 @@
     .btn:hover { box-shadow: var(--ring); }
     .btn.primary { background: var(--primary); color: #0b1220; border-color: transparent; }
     .btn.primary:hover { filter: brightness(0.97); }
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;              /* زوّد المساحة الداخلية */
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 16px;                 /* كبر حجم الخط */
+  font-weight: 600;                /* يخلي الخط أوضح */
+  margin-bottom: 16px;
+  background: color-mix(in oklab, var(--surface), var(--bg) 70%);
+}
 
-    .badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border: 1px solid var(--border); border-radius: 999px; color: var(--muted); font-size: 13px; margin-bottom: 14px; background: color-mix(in oklab, var(--surface), var(--bg) 70%); }
+    /* .badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border: 1px solid var(--border); border-radius: 999px; color: var(--muted); font-size: 13px; margin-bottom: 14px; background: color-mix(in oklab, var(--surface), var(--bg) 70%); } */
     .avatar { position: relative; width: 100%; aspect-ratio: 1; border-radius: 24px; background: radial-gradient(120px 120px at 30% 30%, rgba(255,255,255,.06), transparent), linear-gradient(180deg, color-mix(in oklab, var(--surface), var(--bg) 50%), var(--card)); border: 1px solid var(--border); display: grid; place-items: center; overflow: hidden; }
 .skill b {
   margin-left: 100px; /* أو أي قيمة تعجبك */
@@ -260,15 +273,13 @@
 
     <!-- Main Title -->
     <h1>
-      Crafting <span style="color:var(--primary);">Scalable Applications</span><br>
-      with Elegant & Intuitive Interfaces
+      Crafting Intuitive <span style="color:var(--primary);"> </span><br>
+     Senior iOS Developer Experiences with Robust Code
     </h1>
 
     <!-- Intro Paragraph -->
     <p>
-      Senior iOS Developer specializing in architecting and building robust, high-performance applications. 
-      With deep expertise in the iOS ecosystem and a strong foundation in software engineering principles, 
-      I transform complex ideas into seamless and scalable user experiences.
+      Expert in iOS development with a passion for building high-performance, scalable applications. I leverage deep engineering principles to solve complex problems and deliver seamless, user-centric interfaces that are both powerful and a joy to use.
     </p>
  
 
