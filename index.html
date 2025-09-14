@@ -158,6 +158,9 @@
 
     .badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border: 1px solid var(--border); border-radius: 999px; color: var(--muted); font-size: 13px; margin-bottom: 14px; background: color-mix(in oklab, var(--surface), var(--bg) 70%); }
     .avatar { position: relative; width: 100%; aspect-ratio: 1; border-radius: 24px; background: radial-gradient(120px 120px at 30% 30%, rgba(255,255,255,.06), transparent), linear-gradient(180deg, color-mix(in oklab, var(--surface), var(--bg) 50%), var(--card)); border: 1px solid var(--border); display: grid; place-items: center; overflow: hidden; }
+.skill b {
+  margin-left: 100px; /* أو أي قيمة تعجبك */
+}
 
     .avatar .emoji { font-size: clamp(64px, 11vw, 120px); }
 
@@ -547,13 +550,13 @@
   </div>
 </article>
 
-
+ 
  <section id="competencies" style="width:100%; padding:60px 0;">
   <div class="container">
     <h2 class="sec-title">Core Competencies & Skills</h2>
     <div class="skills reveal full-width">
 
-    <div class="skill"><span>Swift / SwiftUI / UIKit</span><b>Expert</b></div>
+    <div class="skill"><span>Swift / SwiftUI / UIKit</span>&nbsp;<b>Expert</b></div>
     <div class="skill"><span>Architecture (MVVM, MVVM-C, Clean Architecture, VIPER)</span><b>Advanced</b></div>
     <div class="skill"><span>Concurrency (Async/Await, Combine, Operation Queue)</span><b>Advanced</b></div>
     <div class="skill"><span>Realm / SwiftData</span><b>Advanced</b></div>
@@ -566,6 +569,7 @@
     <div class="skill"><span>Jira</span><b>Advanced</b></div>
   </div>
 </section>
+ 
 
 <!-- </section> --> -->
 </section>
@@ -644,15 +648,15 @@
   </main>
 
   <footer>
-    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;">
-      <span>© <span id="year"></span> Ali Mostafa. All rights reserved.</span>
-      <div style="display:flex; gap:12px;">
-        <a href="#" aria-label="GitHub">GitHub</a>
-        <a href="#" aria-label="LinkedIn">LinkedIn</a>
-        <a href="#" aria-label="Twitter">X</a>
-      </div>
+  <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;">
+    <span>© <span id="year"></span> Ali Mostafa. All rights reserved.</span>
+    <div style="display:flex; gap:12px;">
+      <a href="https://github.com/AliKssab" target="_blank" aria-label="GitHub">GitHub</a>
+      <a href="https://www.linkedin.com/in/ali-mostafa-b39b9a253" target="_blank" aria-label="LinkedIn">LinkedIn</a>
     </div>
-  </footer>
+  </div>
+</footer>
+
 
   <script>
     // Theme toggle with localStorage
