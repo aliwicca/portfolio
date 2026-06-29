@@ -3,106 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ali Mostafa Senior IOS Developer — Portfolio</title>
-  <meta name="description" content="Professional portfolio showcasing projects, skills, and experience in iOS and web development." />
+  <title>Ali Mostafa Hamdy — Senior iOS Developer</title>
+  <meta name="description" content="Senior iOS Developer with 4+ years of experience building scalable, real-time applications using SwiftUI, UIKit, and Clean Architecture." />
   <meta name="color-scheme" content="light dark" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ali Mostafa Hamdy — Senior iOS Developer" />
+  <meta property="og:description" content="Senior iOS Developer with 4+ years building scalable, real-time iOS apps (ride-hailing, delivery, e-commerce) using SwiftUI, UIKit, Clean Architecture." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/me.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border: none;
-  }
-
-  video:fullscreen {
-    object-fit: contain !important;
-    background-color: #000;
-  }
-
-  /* دعم لمتصفحات مختلفة */
-  video:-webkit-full-screen {
-    object-fit: contain !important;
-    background-color: #000;
-  }
-
-  video:-moz-full-screen {
-    object-fit: contain !important;
-    background-color: #000;
-  }
-  
-#experience .experience-item h3 {
-  font-size: 1.1rem;
-  margin-bottom: 4px;
-  color: var(--text);
-}
-
-#experience .experience-item .location,
-#experience .experience-item .period {
-  display: inline-block;
-  font-size: 0.9rem;
-  color: var(--muted);
-  margin-right: 10px;
-}
-#experience .experience-item h3 {
-  font-size: 1.1rem;
-  margin-bottom: 4px;
-  color: var(--text);   /* ✅ هيشتغل في light/dark */
-}
-
-#experience .experience-item .location,
-#experience .experience-item .period {
-  display: inline-block;
-  font-size: 0.9rem;
-  color: var(--muted);  /* ✅ للـ meta data */
-  margin-right: 10px;
-}
-
-#experience .tasks li {
-  margin-bottom: 6px;
-  color: var(--text);   /* ✅ هيبان في كل الأوضاع */
-  position: relative;
-  padding-left: 16px;
-}
-
-#experience .tasks li {
-  margin-bottom: 6px;
-  color: var(--text);
-  position: relative;
-  padding-left: 16px;
-}
-
-
-    #experience {
-  margin-top: 60px;
-}
-
-#experience .experience-item {
-  margin-bottom: 25px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #ddd;  
-}
-
- 
- 
-#experience .tasks {
-  list-style: none;
-  padding-left: 0;
-  margin-top: 8px;
-}
-
- 
-
-#experience .tasks li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #0078ff;
-}
-
-    
+    /* ===== CSS Variables ===== */
     :root {
       --bg: #0b0c10;
       --surface: #111318;
@@ -113,7 +26,7 @@
       --ring: 0 0 0 3px rgba(110, 231, 183, .35);
       --card: #0f1115;
       --border: #21242c;
-      --grad: radial-gradient(1200px 600px at 20% -20%, rgba(110, 231, 183,.18), rgba(59,130,246,.15) 30%, transparent 60%),
+      --grad: radial-gradient(1200px 600px at 20% -20%, rgba(110,231,183,.18), rgba(59,130,246,.15) 30%, transparent 60%),
               radial-gradient(900px 500px at 110% 10%, rgba(147,197,253,.1), transparent 40%);
     }
     :root.light {
@@ -130,7 +43,8 @@
               radial-gradient(900px 600px at 120% -10%, rgba(110,231,183,.15), transparent 50%);
     }
 
-    * { box-sizing: border-box; }
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after { box-sizing: border-box; }
     html, body { height: 100%; }
     body {
       margin: 0;
@@ -143,10 +57,9 @@
     }
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
-
     .container { width: min(1100px, 92%); margin: 0 auto; }
 
-    /* Header */
+    /* ===== Header ===== */
     header {
       position: sticky; top: 0; z-index: 50;
       backdrop-filter: saturate(140%) blur(8px);
@@ -155,773 +68,734 @@
     }
     .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
     .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .2px; }
-   .logo {
-  width: 40px;      /* حجم العرض */
-  height: 40px;     /* حجم الطول */
-  border-radius: 8px;  /* تخليها 50% لو عايزها دايرة */
-  background: url("https://img.icons8.com/?size=512&id=20821&format=png") no-repeat center/cover;
-  border: 1px solid var(--border);  /* خط حوالين الصورة */
-}
-
-    nav ul { display: flex; list-style: none; gap: 18px; margin: 0; padding: 0; }
-    nav a { padding: 8px 12px; border-radius: 10px; color: var(--muted); font-weight: 500; }
+    .logo {
+      width: 40px; height: 40px; border-radius: 50%;
+      overflow: hidden; border: 2px solid var(--border); flex-shrink: 0;
+    }
+    .logo img { width: 100%; height: 100%; object-fit: cover; }
+    nav ul { display: flex; list-style: none; gap: 4px; margin: 0; padding: 0; }
+    nav a { padding: 8px 12px; border-radius: 10px; color: var(--muted); font-weight: 500; transition: background .15s, color .15s; }
     nav a:hover { background: color-mix(in oklab, var(--surface), var(--bg) 70%); color: var(--text); }
-    .cta { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 12px; background: var(--primary); color: #0b1220; font-weight: 700; }
+    .header-actions { display: flex; gap: 10px; align-items: center; }
+    .cta { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 12px; background: var(--primary); color: #0b1220; font-weight: 700; transition: background .15s; }
     .cta:hover { background: var(--primary-700); }
 
-    /* Hero */
-    .hero { padding: clamp(48px, 8vw, 96px) 0; display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: start; }
-    .hero h1 { font-size: clamp(32px, 5vw, 56px); line-height: 1.1; margin: 0 0 12px; }
-    .hero p { color: var(--muted); font-size: clamp(16px, 2.4vw, 18px); margin: 0 0 22px; }
-    .hero .actions { display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-weight: 600; }
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 16px; border-radius: 12px;
+      border: 1px solid var(--border); background: var(--surface);
+      color: var(--text); font-weight: 600; font-size: 14px;
+      cursor: pointer; transition: box-shadow .15s, background .15s;
+    }
     .btn:hover { box-shadow: var(--ring); }
     .btn.primary { background: var(--primary); color: #0b1220; border-color: transparent; }
-    .btn.primary:hover { filter: brightness(0.97); }
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 16px;              /* زوّد المساحة الداخلية */
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  color: var(--muted);
-  font-size: 16px;                 /* كبر حجم الخط */
-  font-weight: 600;                /* يخلي الخط أوضح */
-  margin-bottom: 16px;
-  background: color-mix(in oklab, var(--surface), var(--bg) 70%);
-}
+    .btn.primary:hover { filter: brightness(.95); box-shadow: none; }
+    button.btn { font-family: inherit; }
 
-    /* .badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border: 1px solid var(--border); border-radius: 999px; color: var(--muted); font-size: 13px; margin-bottom: 14px; background: color-mix(in oklab, var(--surface), var(--bg) 70%); } */
-    .avatar { position: relative; width: 100%; aspect-ratio: 1; border-radius: 24px; background: radial-gradient(120px 120px at 30% 30%, rgba(255,255,255,.06), transparent), linear-gradient(180deg, color-mix(in oklab, var(--surface), var(--bg) 50%), var(--card)); border: 1px solid var(--border); display: grid; place-items: center; overflow: hidden; }
-.skill b {
-  margin-left: 100px; /* أو أي قيمة تعجبك */
-}
+    /* ===== Hero ===== */
+    .hero {
+      padding: clamp(48px, 8vw, 96px) 0;
+      display: grid; grid-template-columns: 1.2fr 1fr;
+      gap: 40px; align-items: center;
+    }
+    .hero h1 { font-size: clamp(30px, 4.5vw, 52px); line-height: 1.15; margin: 0 0 14px; }
+    .hero p { color: var(--muted); font-size: clamp(15px, 2.2vw, 17px); margin: 0 0 24px; max-width: 520px; }
+    .hero .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 14px; border: 1px solid var(--border);
+      border-radius: 999px; color: var(--muted); font-size: 14px;
+      font-weight: 600; margin-bottom: 18px;
+      background: color-mix(in oklab, var(--surface), var(--bg) 70%);
+    }
+    .avatar {
+      position: relative; width: 100%; aspect-ratio: 1;
+      border-radius: 24px; overflow: hidden;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, color-mix(in oklab, var(--surface), var(--bg) 50%), var(--card));
+    }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
 
-    .avatar .emoji { font-size: clamp(64px, 11vw, 120px); }
+    /* ===== Sections ===== */
+    section { padding: clamp(36px, 6vw, 72px) 0; }
+    .sec-title { font-size: clamp(22px, 3vw, 30px); margin: 0 0 8px; }
+    .sec-sub { color: var(--muted); margin: 0 0 28px; }
 
-    /* Section */
-    section { padding: clamp(36px, 7vw, 72px) 0; }
-    .sec-title { font-size: clamp(22px, 3.2vw, 32px); margin: 0 0 14px; }
-    .sec-sub { color: var(--muted); margin: 0 0 26px; }
+    /* ===== Cards Grid ===== */
+    .grid { display: grid; gap: 20px; }
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 18px; padding: 22px;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,.25); }
 
-    /* Cards grid */
-    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
-    .card { grid-column: span 12; background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 18px; transition: transform .2s ease, box-shadow .2s ease; }
-    .card:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,.22); }
+    /* ===== Projects ===== */
+    .project { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+    .project h3 { margin: 0 0 8px; font-size: 19px; }
+    .project > div:first-child p { margin: 0 0 12px; color: var(--muted); font-size: 15px; line-height: 1.65; }
+    .project .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+    .tag { font-size: 12px; padding: 5px 10px; border-radius: 999px; border: 1px dashed var(--border); color: var(--muted); }
+    .project .links { display: flex; gap: 10px; flex-wrap: wrap; }
 
-    /* Projects */
-    .filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
-    .chip { padding: 8px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--muted); font-weight: 600; cursor: pointer; }
-    .chip[aria-pressed="true"] { background: var(--primary); color: #0b1220; border-color: transparent; }
+    /* ===== Phone Frame ===== */
+    .phone-frame {
+      width: 260px; height: 520px; border-radius: 40px;
+      overflow: hidden; margin: 0 auto;
+      box-shadow: 0 8px 32px rgba(0,0,0,.5);
+      border: 1px solid var(--border);
+      background: #000;
+    }
+    .phone-frame video, .phone-frame img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
 
-    .project { display: grid; grid-template-columns: 1fr 1.6fr; gap: 16px; align-items: start; }
-    .project h3 { margin: 0 0 6px; font-size: 20px; }
-    .project p { margin: 0 0 10px; color: var(--muted); }
-    .project .meta { display: flex; gap: 10px; flex-wrap: wrap; }
-    .tag { font-size: 12px; padding: 6px 10px; border-radius: 999px; border: 1px dashed var(--border); color: var(--muted); }
-    .project .links { margin-top: 10px; display: flex; gap: 10px; }
+    /* ===== PDF Slider ===== */
+    .slider-wrapper {
+      width: 260px; height: 520px; border-radius: 40px;
+      overflow: hidden; margin: 0 auto;
+      box-shadow: 0 8px 32px rgba(0,0,0,.5);
+      border: 1px solid var(--border);
+      position: relative;
+    }
+    .slider-track { display: flex; height: 100%; transition: transform .6s ease-in-out; }
+    .slider-track img { width: 260px; height: 520px; object-fit: cover; flex-shrink: 0; }
+    .slider-dots { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; }
+    .slider-dots span { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.4); transition: background .3s; }
+    .slider-dots span.active { background: #fff; }
 
-    .thumb { aspect-ratio: 16/9; background: linear-gradient(135deg, rgba(110,231,183,.18), rgba(14,165,233,.18)); border: 1px solid var(--border); border-radius: 14px; display: grid; place-items: center; color: var(--muted); font-weight: 700; letter-spacing: .4px; }
+    /* ===== Skills ===== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 12px;
+    }
+    .skill {
+      padding: 14px 16px; border: 1px solid var(--border);
+      border-radius: 14px; background: var(--surface);
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px;
+    }
+    .skill span { font-size: 14px; }
+    .skill b { font-size: 12px; padding: 4px 10px; border-radius: 999px; white-space: nowrap; }
+    .skill b.expert { background: color-mix(in oklab, var(--primary), transparent 80%); color: var(--primary); }
+    .skill b.advanced { background: color-mix(in oklab, #a78bfa, transparent 80%); color: #a78bfa; }
 
-    /* Skills */
-    .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-    .skill { padding: 14px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); display: flex; align-items: center; justify-content: space-between; }
-    .skill b { font-weight: 700; }
+    /* ===== Experience ===== */
+    .experience-list { display: flex; flex-direction: column; gap: 0; }
+    .experience-item {
+      padding: 22px 0; border-bottom: 1px solid var(--border);
+    }
+    .experience-item:last-child { border-bottom: none; }
+    .experience-item h3 { font-size: 17px; margin: 0 0 6px; color: var(--text); }
+    .experience-item h3 span { color: var(--primary); }
+    .exp-meta { display: flex; gap: 8px; flex-wrap: wrap; font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+    .exp-meta .dot { opacity: .5; }
+    .tasks { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+    .tasks li {
+      color: var(--text); font-size: 14px; line-height: 1.6;
+      padding-left: 18px; position: relative;
+    }
+    .tasks li::before { content: "▸"; position: absolute; left: 0; color: var(--primary); font-size: 12px; top: 2px; }
 
-    /* Timeline */
-    .timeline { position: relative; padding-left: 24px; }
-    .timeline::before { content: ""; position: absolute; left: 6px; top: 0; bottom: 0; width: 2px; background: var(--border); border-radius: 2px; }
-    .tl-item { position: relative; margin: 16px 0; padding-left: 10px; }
-    .tl-item::before { content: ""; position: absolute; left: -2px; top: 8px; width: 10px; height: 10px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 0 4px color-mix(in oklab, var(--primary), transparent 70%); }
-    .tl-item h4 { margin: 0 0 4px; }
-    .tl-item small { color: var(--muted); }
-
-    /* Contact */
+    /* ===== Contact ===== */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+    .contact-info { display: flex; flex-direction: column; gap: 14px; }
+    .contact-link {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 16px; border: 1px solid var(--border);
+      border-radius: 14px; background: var(--surface);
+      color: var(--text); font-weight: 500; font-size: 15px;
+      transition: box-shadow .15s, transform .15s;
+    }
+    .contact-link:hover { box-shadow: var(--ring); transform: translateX(4px); }
+    .contact-link .icon { font-size: 20px; width: 28px; text-align: center; }
     form { display: grid; gap: 12px; }
     .field { display: grid; gap: 6px; }
-    input, textarea { padding: 12px 14px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font: inherit; }
+    .field label { font-size: 13px; font-weight: 600; color: var(--muted); }
+    input, textarea {
+      padding: 12px 14px; border-radius: 12px;
+      border: 1px solid var(--border); background: var(--surface);
+      color: var(--text); font: inherit; font-size: 14px;
+      transition: box-shadow .15s;
+    }
     input:focus, textarea:focus { outline: none; box-shadow: var(--ring); }
     textarea { min-height: 120px; resize: vertical; }
+    #formStatus { font-size: 14px; color: var(--primary); min-height: 20px; }
 
-    /* Footer */
-    footer { padding: 26px 0 46px; color: var(--muted); border-top: 1px solid var(--border); margin-top: 24px; }
+    /* ===== Footer ===== */
+    footer {
+      padding: 28px 0 48px; color: var(--muted);
+      border-top: 1px solid var(--border); margin-top: 12px;
+    }
+    footer .footer-inner {
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 14px; flex-wrap: wrap;
+    }
+    footer a:hover { color: var(--text); }
+    .footer-links { display: flex; gap: 16px; }
 
-    /* Responsive */
+    /* ===== Scroll Reveal ===== */
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .55s ease, transform .55s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+
+    /* ===== Responsive ===== */
     @media (max-width: 980px) {
       .hero { grid-template-columns: 1fr; }
+      .hero .avatar { max-width: 280px; justify-self: center; }
       .project { grid-template-columns: 1fr; }
-      .skills { grid-template-columns: repeat(2,1fr); }
+      .contact-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 620px) {
       nav ul { display: none; }
-      .skills { grid-template-columns: 1fr; }
+      .phone-frame, .slider-wrapper { width: 220px; height: 440px; }
     }
-    /* Animations */
-    .reveal { opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; }
-    .reveal.show { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container nav" role="navigation" aria-label="Main">
-      <a class="brand" href="#home" aria-label="Go to top">
-        <span class="logo" aria-hidden="true"></span>
-      <span style="display:flex; flex-direction:column; line-height:1.2;">
-  Ali Mostafa
-  <small style="font-weight:400; color:var(--muted);">Senior iOS Developer</small>
-</span>
 
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="container nav" role="navigation" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Go to top">
+        <span class="logo">
+          <img src="images/me.jpeg" alt="Ali Mostafa" />
+        </span>
+        <span style="display:flex; flex-direction:column; line-height:1.2;">
+          Ali Mostafa Hamdy
+          <small style="font-weight:400; color:var(--muted); font-size:12px;">Senior iOS Developer</small>
+        </span>
       </a>
       <nav>
         <ul>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#competencies">Skills</a></li>
           <li><a href="#experience">Experience</a></li>
-          <!-- <li><a href="#contact">Contact</a></li> -->
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <div style="display:flex; gap:10px; align-items:center;">
-        <button id="themeToggle" class="btn" aria-pressed="false" aria-label="Toggle theme">🌙 Theme</button>
+      <div class="header-actions">
+        <button id="themeToggle" class="btn" aria-pressed="false" aria-label="Toggle light/dark theme">🌙 Theme</button>
         <a class="cta" href="#contact">Hire Me</a>
       </div>
     </div>
   </header>
 
   <main id="home">
-<section class="container hero reveal">
-  <div>
-    <!-- Badge -->
-    <div class="badge">🚀 iOS Engineer — 4+ Years of Experience</div>
 
-    <!-- Main Title -->
-    <h1>
-      Crafting Intuitive <span style="color:var(--primary);"> </span><br>
-     Senior iOS Developer Experiences with Robust Code
-    </h1>
+    <!-- ===== Hero ===== -->
+    <section class="container hero reveal">
+      <div>
+        <div class="badge">🚀 iOS Engineer — 4+ Years of Experience · Cairo, Egypt</div>
+        <h1>
+          Ali Mostafa Hamdy<br>
+          <span style="color:var(--primary);">Senior iOS Developer</span>
+        </h1>
+        <p>
+          Senior iOS Developer with 4+ years of experience building scalable, real-time applications
+          (ride-hailing, delivery, and e-commerce) using SwiftUI, UIKit, and Clean Architecture,
+          with strong focus on performance, modularity, and maintainability.
+        </p>
+        <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:20px; font-size:14px; color:var(--muted);">
+          <a href="mailto:ali.mostafa.kassab2022@gmail.com" style="display:flex;align-items:center;gap:6px;color:var(--muted);">✉️ ali.mostafa.kassab2022@gmail.com</a>
+          <a href="tel:+201120521552" style="display:flex;align-items:center;gap:6px;color:var(--muted);">📞 (+20) 1120521552</a>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="#projects">🚀 See My Projects</a>
+          <a class="btn" href="AliMostafa_Ios_CV.docx" download>📄 Download Resume</a>
+          <a class="btn" href="#contact">✉️ Contact Me</a>
+        </div>
+      </div>
+      <div class="avatar" aria-hidden="true">
+        <img src="images/me.jpeg" alt="Ali Mostafa Hamdy — Senior iOS Developer" />
+      </div>
+    </section>
 
-    <!-- Intro Paragraph -->
-    <p>
-      Expert in iOS development with a passion for building high-performance, scalable applications. I leverage deep engineering principles to solve complex problems and deliver seamless, user-centric interfaces that are both powerful and a joy to use.
-    </p>
- 
-
-   
-    <!-- Actions -->
-    <div class="actions">
-      <a class="btn primary" href="#projects">🚀 See My Projects</a>
-      <a class="btn" href="AliMostafa_Ios_CV.docx" download>📄 Download Resume</a>
-<a class="btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=ali.mostafa.kassab2022@gmail.com" target="_blank">
-  ✉️ Contact Me
-</a>
-    </div>
-  </div>
-
-  <!-- Avatar -->
-<!-- Avatar -->
-<div class="avatar" aria-hidden="true">
-  <img src="images/me.jpeg" 
-       alt="Ali Mostafa Developer Avatar">
-</div>
-
-
-</section>
-
-
-
+    <!-- ===== Projects ===== -->
     <section id="projects" class="container">
-      <h2 class="sec-title">Featured Projects</h2>
-      <p class="sec-sub">A selection of production apps and experiments. Filter by category.</p>
+      <h2 class="sec-title reveal">Featured Projects</h2>
+      <p class="sec-sub reveal">Production apps built with Swift, SwiftUI, and modern iOS architecture patterns.</p>
 
-      <div class="filters" role="toolbar" aria-label="Project filters">
-        <!-- <button class="chip" data-filter="IOS" aria-pressed="true">IOS</button> -->
-        
+      <div class="grid">
+
+        <!-- eTrip -->
+        <article class="card project reveal" data-type="ios">
+          <div>
+            <h3>eTrip — Smart Electric Scooter &amp; Bike Rental</h3>
+            <p>
+              A modern mobility solution enabling users to rent and ride electric scooters and bikes directly from their phones.
+              Real-time <strong>MapKit</strong> integration shows nearby vehicles with battery level and availability.
+              Users can unlock, reserve, and drop off scooters anywhere within the designated zone.
+            </p>
+            <p>
+              Built with <strong>UIKit</strong> and <strong>Clean Architecture</strong> for scalability and testability.
+              Integrates <strong>Firebase</strong> for authentication, real-time data, and location tracking.
+            </p>
+            <div class="meta">
+              <span class="tag">Swift</span><span class="tag">UIKit</span>
+              <span class="tag">Clean Architecture</span><span class="tag">Google Maps</span>
+              <span class="tag">Firebase</span><span class="tag">Real-time Tracking</span>
+            </div>
+            <div class="links">
+              <a class="btn primary" href="https://apps.apple.com/us/app/e-trip-staging/id6739808611" target="_blank" rel="noopener noreferrer">🍎 App Store</a>
+            </div>
+          </div>
+          <div class="phone-frame">
+            <video controls playsinline preload="none" poster="">
+              <source src="videos/etrip.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </article>
+
+        <!-- Lavander -->
+        <article class="card project reveal" data-type="ios">
+          <div>
+            <h3>Lavander — Laundry Delivery App</h3>
+            <p>
+              A full-featured laundry delivery system with real-time order tracking and push notifications.
+              Implemented payment integration and improved order lifecycle management.
+              Designed scalable architecture using <strong>SwiftUI</strong> and <strong>Clean Architecture</strong>
+              with Factory, UseCase, and Domain layers.
+            </p>
+            <div class="meta">
+              <span class="tag">Swift</span><span class="tag">SwiftUI</span>
+              <span class="tag">Clean Architecture</span><span class="tag">Firebase</span>
+              <span class="tag">Alamofire</span><span class="tag">Payments</span>
+              <span class="tag">Notifications</span>
+            </div>
+            <div class="links"></div>
+          </div>
+          <div class="phone-frame">
+            <video controls playsinline preload="none" poster="">
+              <source src="videos/Lavander.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </article>
+
+        <!-- Zoz -->
+        <article class="card project reveal" data-type="ios">
+          <div>
+            <h3>Zoz — Social E-commerce Platform</h3>
+            <p>
+              Rebuilt the application using <strong>SwiftUI</strong> and <strong>Clean Architecture</strong>
+              to improve scalability and maintainability. Optimized performance and enhanced modularity across features.
+              Integrated REST APIs and Firebase for dynamic content and real-time interactions.
+              Architecture transformed from MVP to modular Clean Architecture with Factory, UseCase, and Domain layers.
+            </p>
+            <div class="meta">
+              <span class="tag">Swift</span><span class="tag">SwiftUI</span>
+              <span class="tag">Clean Architecture</span><span class="tag">Firebase</span>
+              <span class="tag">REST APIs</span>
+            </div>
+            <div class="links">
+              <a class="btn primary" href="https://apps.apple.com/us/app/zoz-client/id6479211858" target="_blank" rel="noopener noreferrer">🍎 App Store</a>
+            </div>
+          </div>
+          <div class="phone-frame">
+            <video controls playsinline preload="none" poster="">
+              <source src="videos/zoz.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </article>
+
+        <!-- Cab -->
+        <article class="card project reveal" data-type="ios">
+          <div>
+            <h3>CAB — Uber-like Delivery Platform</h3>
+            <p>
+              Built a scalable delivery platform handling restaurants, users, and orders with real-time trip tracking
+              and request management. Implemented <strong>MVVM</strong> architecture for code readability and testability.
+              Integrated <strong>Firebase</strong> and <strong>Alamofire</strong> for real-time updates, live tracking,
+              push notifications, and optimized API handling.
+            </p>
+            <div class="meta">
+              <span class="tag">Swift</span><span class="tag">MVVM</span>
+              <span class="tag">Firebase</span><span class="tag">Alamofire</span>
+              <span class="tag">Socket.IO</span><span class="tag">Google Maps</span>
+              <span class="tag">Tap Payments</span>
+            </div>
+            <div class="links">
+              <a class="btn primary" href="https://apps.apple.com/eg/app/%D9%83%D8%A7%D8%A8-cab/id6472556895" target="_blank" rel="noopener noreferrer">🍎 App Store</a>
+            </div>
+          </div>
+          <div class="phone-frame">
+            <video controls playsinline preload="none" poster="">
+              <source src="videos/cab.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </article>
+
+        <!-- Tavolo -->
+        <article class="card project reveal" data-type="ios">
+          <div>
+            <h3>Tavolo — Restaurant Reservation App</h3>
+            <p>
+              A modern reservation app for discovering restaurants, browsing menus,
+              and checking real-time table availability. Features include user profiles, reviews,
+              push notifications, and secure payments. Built with Swift and MVVM.
+            </p>
+            <div class="meta">
+              <span class="tag">Swift</span><span class="tag">MVVM</span>
+              <span class="tag">Firebase</span><span class="tag">Reservations</span>
+              <span class="tag">Payments</span>
+            </div>
+            <div class="links">
+              <a class="btn primary" href="https://apps.apple.com/eg/app/tavolo/id6479755462" target="_blank" rel="noopener noreferrer">🍎 App Store</a>
+            </div>
+          </div>
+          <div class="phone-frame">
+            <video controls playsinline preload="none" poster="">
+              <source src="videos/Taflo.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </article>
+
+        <!-- Delivery -->
+        <article class="card project reveal" data-type="ios">
+          <div>
+            <h3>Delivery App — Comprehensive Delivery Platform</h3>
+            <p>
+              A full-featured delivery platform with an extensive product catalog, customizable orders,
+              real-time delivery tracking, ratings &amp; reviews, promotions, push notifications,
+              and secure payments. Built with Swift and MVVM architecture.
+            </p>
+            <div class="meta">
+              <span class="tag">Swift</span><span class="tag">MVVM</span>
+              <span class="tag">Firebase</span><span class="tag">Payments</span>
+              <span class="tag">Real-time Tracking</span><span class="tag">E-commerce</span>
+            </div>
+            <div class="links">
+              <a class="btn primary" href="https://apps.apple.com/eg/developer/meshref-emam-attia-attia/id1255459078" target="_blank" rel="noopener noreferrer">🍎 App Store</a>
+            </div>
+          </div>
+          <div class="phone-frame">
+            <video controls playsinline preload="none" poster="">
+              <source src="videos/Delivery.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </article>
+
+        <!-- Al-Fatiha -->
+        <article class="card project reveal" data-type="ios">
+          <div>
+            <h3>Al-Fatiha App — Quran Pronunciation Improvement</h3>
+            <p>
+              Helps users enhance their pronunciation of Surat Al-Fatiha through expert evaluation
+              and accurate verse-by-verse listening. Supports error review, re-listening, and
+              continuous improvement. Features audio recording &amp; playback, notifications,
+              Firebase Messaging, and full localization.
+            </p>
+            <div class="meta">
+              <span class="tag">Swift</span><span class="tag">MVC</span>
+              <span class="tag">Audio Recording</span><span class="tag">Localization</span>
+              <span class="tag">Firebase Messaging</span><span class="tag">Notifications</span>
+            </div>
+            <div class="links">
+              <a class="btn primary" href="https://apps.apple.com/eg/developer/meshref-emam-attia-attia/id1255459078" target="_blank" rel="noopener noreferrer">🍎 App Store</a>
+            </div>
+          </div>
+          <!-- Image slider replacing PDF embeds -->
+          <div class="slider-wrapper" id="alFatihaSliderWrapper">
+            <div class="slider-track" id="alFatihaSlider">
+              <img src="images/imge8.png" alt="Al-Fatiha App Screenshot 1" loading="lazy" />
+            </div>
+            <div class="slider-dots" id="sliderDots"></div>
+          </div>
+        </article>
+
+        <!-- See-My-Result -->
+        <article class="card project reveal" data-type="ios">
+          <div>
+            <h3>See-My-Result — Medical Test Results</h3>
+            <p>
+              A healthcare-focused app designed to analyze and display medical test results,
+              transforming findings into actionable medical advice. Leverages WebView for real-time
+              access to crucial information, streamlining communication between patients and healthcare professionals.
+            </p>
+            <div class="meta">
+              <span class="tag">Swift</span><span class="tag">MVC</span>
+              <span class="tag">WebView</span><span class="tag">Healthcare</span>
+            </div>
+            <div class="links">
+              <a class="btn" href="https://github.com/AliKssab/See-My-Result" target="_blank" rel="noopener noreferrer">💻 GitHub</a>
+            </div>
+          </div>
+          <div class="phone-frame">
+            <video controls playsinline preload="none" poster="">
+              <source src="videos/Reservations.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </article>
+
+        <!-- Alborg -->
+        <article class="card project reveal" data-type="ios">
+          <div>
+            <h3>Alborg — Medical Diagnostics App</h3>
+            <p>
+              An innovative healthcare app empowering doctors with advanced tools for diagnostics,
+              treatment planning, and real-time collaboration. Seamlessly integrates medical test results
+              into the healthcare ecosystem, enabling personalized recommendations for patients.
+            </p>
+            <div class="meta">
+              <span class="tag">Swift</span><span class="tag">MVC</span>
+              <span class="tag">Healthcare</span><span class="tag">Diagnostics</span>
+            </div>
+            <div class="links">
+              <a class="btn" href="https://github.com/AliKssab/Albrg" target="_blank" rel="noopener noreferrer">💻 GitHub</a>
+            </div>
+          </div>
+          <div class="phone-frame">
+            <video controls playsinline preload="none" poster="">
+              <source src="videos/Medical.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </article>
+
+      </div><!-- /.grid -->
+    </section>
+
+    <!-- ===== Skills ===== -->
+    <section id="competencies" class="container">
+      <h2 class="sec-title reveal">Core Competencies &amp; Skills</h2>
+      <p class="sec-sub reveal">Technologies and tools I work with daily.</p>
+      <div class="skills-grid reveal">
+        <div class="skill"><span>Swift / SwiftUI / UIKit</span><b class="expert">Expert</b></div>
+        <div class="skill"><span>Architecture (Clean Arch, MVVM, VIPER, Coordinator)</span><b class="advanced">Advanced</b></div>
+        <div class="skill"><span>Concurrency (RxSwift, Combine, Async/Await, GCD)</span><b class="advanced">Advanced</b></div>
+        <div class="skill"><span>Networking (REST APIs, Alamofire, URLSession, JSON)</span><b class="advanced">Advanced</b></div>
+        <div class="skill"><span>Real-time (Socket.IO, WebSockets, Live Tracking, Chat)</span><b class="advanced">Advanced</b></div>
+        <div class="skill"><span>Maps (Google Maps SDK, Core Location, MapKit)</span><b class="advanced">Advanced</b></div>
+        <div class="skill"><span>Firebase (FCM, Auth, Firestore, Realtime DB)</span><b class="advanced">Advanced</b></div>
+        <div class="skill"><span>Payments (Apple Pay, Tap, Visa, PayPal)</span><b class="advanced">Advanced</b></div>
+        <div class="skill"><span>Data (UserDefaults, Keychain, Core Data, SwiftData)</span><b class="advanced">Advanced</b></div>
+        <div class="skill"><span>Media (AVFoundation, Audio Recording/Playback)</span><b class="advanced">Advanced</b></div>
+        <div class="skill"><span>Tools (Git, SPM, CocoaPods, Carthage, Xcode)</span><b class="expert">Expert</b></div>
+        <div class="skill"><span>UI/UX (Figma, HIG, Custom Components, Auto Layout)</span><b class="advanced">Advanced</b></div>
+        <div class="skill"><span>Notifications (APNs, Firebase Cloud Messaging)</span><b class="advanced">Advanced</b></div>
+        <div class="skill"><span>App Store Publishing &amp; Review Process</span><b class="expert">Expert</b></div>
       </div>
+    </section>
 
-      <div class="grid" id="projectGrid">
+    <!-- ===== Experience ===== -->
+    <section id="experience" class="container">
+      <h2 class="sec-title reveal">Experience</h2>
+      <p class="sec-sub reveal">My professional journey as an iOS developer.</p>
+      <div class="experience-list">
 
-        <!-- eTrip APP -->
-<article class="card project reveal" data-tags="ios swift uikit clean-architecture scooter rental GoogleMap firebase" data-type="ios" lang="en">
-  <div>
-    <h3>eTrip — Smart Electric Scooter & Bike Rental App</h3>
-    <p>
-      A modern mobility solution that enables users to rent and ride electric scooters and bikes directly from their phones. 
-      Through real-time integration with <strong>MapKit</strong>, users can view available scooters nearby, check each vehicle’s 
-      battery level and availability status, and unlock or reserve scooters instantly. 
-      The system also supports flexible drop-off — users can leave the scooter anywhere within the designated zone.
-    </p>
-    <p>
-      Built with <strong>UIKit</strong> following <strong>Clean Architecture</strong> principles to ensure scalability, testability, 
-      and maintainable code. The app integrates with <strong>Firebase</strong> for authentication, real-time data, and 
-      location tracking, delivering a smooth, reliable, and connected user experience.
-    </p>
-    <div class="meta">
-      <span class="tag">Swift</span>
-      <span class="tag">UIKit</span>
-      <span class="tag">Clean Architecture</span>
-      <span class="tag">GoogleMap</span>
-      <span class="tag">Firebase</span>
-      <span class="tag">Real-time Tracking</span>
-      <span class="tag">Scooter Rental</span>
-    </div>
-    <div class="links">
-      <a class="btn primary" href="https://apps.apple.com/us/app/e-trip-staging/id6739808611" target="_blank" rel="noopener">App Store</a>
-    </div>
-  </div>
+        <div class="experience-item reveal">
+          <h3>Senior iOS Developer — <span>Al-Alamia Al-Hurra</span></h3>
+          <div class="exp-meta">
+            <span>🌐 Remote</span><span class="dot">•</span>
+            <span>December 2024 – Present</span>
+          </div>
+          <ul class="tasks">
+            <li>Improved application performance and reduced technical debt through Clean Architecture refactoring and architectural optimization.</li>
+            <li>Refactored legacy iOS applications using Clean Architecture and SwiftUI, enhancing maintainability, scalability, and code quality.</li>
+            <li>Designed and developed scalable modules from scratch using UIKit and SwiftUI following Factory, Use Case, and Domain-driven design principles.</li>
+            <li>Collaborated with cross-functional teams to deliver stable, production-ready releases across multiple products.</li>
+          </ul>
+        </div>
 
-  <!-- Phone video frame -->
-  <div class="thumb" style="max-width: 300px; margin: 0 auto;">
-    <div style="
-      width: 300px;
-      height: 600px;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    ">
-      <video controls playsinline style="width:100%; height:100%; object-fit: cover;">
-        <source src="videos/etrip.mp4" type="video/mp4">
-        Your browser does not support video playback.
-      </video>
-    </div>
-  </div>
-</article>
+        <div class="experience-item reveal">
+          <h3>Mid-Senior iOS Developer — <span>CAB</span></h3>
+          <div class="exp-meta">
+            <span>🇸🇦 Saudi Arabia, Remote</span><span class="dot">•</span>
+            <span>February 2024 – November 2024</span>
+          </div>
+          <ul class="tasks">
+            <li>Developed and maintained core features for an Uber-like delivery platform handling restaurants, users, and orders.</li>
+            <li>Implemented MVVM architecture to enhance code readability, scalability, and testability.</li>
+            <li>Integrated real-time features using Firebase and Alamofire for live trip tracking and request handling.</li>
+            <li>Contributed to improving app stability and performance in a production environment.</li>
+          </ul>
+        </div>
 
+        <div class="experience-item reveal">
+          <h3>Junior iOS Developer — <span>ALEXON</span></h3>
+          <div class="exp-meta">
+            <span>🇪🇬 Egypt</span><span class="dot">•</span>
+            <span>January 2023 – January 2024</span>
+          </div>
+          <ul class="tasks">
+            <li>Built and maintained iOS features using UIKit with MVC/MVVM architectures.</li>
+            <li>Integrated RESTful APIs and handled JSON parsing for dynamic data-driven interfaces.</li>
+            <li>Improved user experience by optimizing app flows and implementing push notifications via Firebase.</li>
+          </ul>
+        </div>
 
+        <div class="experience-item reveal">
+          <h3>iOS Developer — <span>Al-Fawadiya</span></h3>
+          <div class="exp-meta">
+            <span>🇸🇦 Saudi Arabia, Remote</span><span class="dot">•</span>
+            <span>January 2022 – December 2022</span>
+          </div>
+          <ul class="tasks">
+            <li>Developed and maintained iOS features including networking, maps integration, and push notifications.</li>
+            <li>Implemented clean and reusable UI components using UIKit.</li>
+            <li>Integrated REST APIs and ensured reliable data handling across app modules.</li>
+            <li>Collaborated with the team to deliver features aligned with business requirements.</li>
+          </ul>
+        </div>
 
-        
-<!-- Lavander APP -->
-<article class="card project reveal" data-tags="ios swift clean-architecture swiftui factory usecase healthcare" data-type="ios" lang="en">
-  <div>
-    <h3>Lavander — Doctor Booking & Medical Services App</h3>
-    <p>
-      A comprehensive medical platform that allows users to book doctors across various specialties, 
-      make secure online payments, and track their appointment status in real time. 
-      Built entirely with <strong>SwiftUI</strong> following the <strong>Clean Architecture</strong> pattern, 
-      utilizing <strong>Factory, UseCase, and Domain</strong> layers for a scalable and maintainable structure. 
-      The app delivers a smooth, modern user experience with intuitive navigation and elegant UI components.
-    </p>
-    <div class="meta">
-      <span class="tag">Swift</span>
-      <span class="tag">SwiftUI</span>
-      <span class="tag">Clean Architecture</span>
-      <span class="tag">Factory Pattern</span>
-      <span class="tag">UseCase</span>
-      <span class="tag">Healthcare</span>
-      <span class="tag">Payments</span>
-    </div>
-    <div class="links">
-      <!-- <a class="btn primary" href="#" target="_blank" rel="noopener">App Store</a> -->
-      <!-- <a class="btn" href="#">Case Study</a> -->
-    </div>
-  </div>
-
-  <!-- Phone video frame -->
-  <div class="thumb" style="max-width: 300px; margin: 0 auto;">
-    <div style="
-      width: 300px;
-      height: 600px;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    ">
-      <video controls playsinline style="width:100%; height:100%; object-fit: cover;">
-        <source src="videos/lavander.mp4" type="video/mp4">
-        Your browser does not support video playback.
-      </video>
-    </div>
-  </div>
-</article>
-
-        
-    <!--  zoz APP -->
-<article class="card project reveal" data-tags="ios swift clean-architecture swiftui factory usecase" data-type="ios" lang="en">
-  <div>
-    <h3>Zoz — Food & Service Ordering App</h3>
-    <p>
-   A versatile platform that allows users to order meals from restaurants and request 
-      on-demand services such as gas delivery. The app was completely restructured and redesigned — 
-      migrated from UIKit to SwiftUI with over 80% of the UI rebuilt. Architecture transformed 
-      from MVP to a modular <strong>Clean Architecture</strong> setup using <strong>Factory, UseCase, and Domain layers</strong>.
-      Smooth navigation between SwiftUI and Storyboard modules was implemented for a seamless experience.
-    </p>
-    <div class="meta">
-      <span class="tag">Swift</span>
-      <span class="tag">SwiftUI</span>
-      <span class="tag">Clean Architecture</span>
-      <span class="tag">Factory Pattern</span>
-      <span class="tag">UseCase</span>
-      <span class="tag">UIKit Integration</span>
-    </div>
-    <div class="links">
-      <a class="btn primary" href="https://apps.apple.com/us/app/zoz-client/id6479211858" target="_blank" rel="noopener">App Store</a>
-      <!-- <a class="btn" href="#">Case Study</a>
-      <a class="btn" href="#">Code</a> -->
-    </div>
-  </div>
-
-  <!-- Phone video frame -->
-  <div class="thumb" style="max-width: 300px; margin: 0 auto;">
-    <div style="
-      width: 300px;
-      height: 600px;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    ">
-      <video controls playsinline style="width:100%; height:100%; object-fit: cover;">
-        <source src="videos/zoz.mp4" type="video/mp4">
-        Your browser does not support video playback.
-      </video>
-    </div>
-  </div>
-</article>
-
-
-    <!--  Cab APP -->
-<article class="card project reveal" data-tags="ios swift mvvm realtime maps chat payments" data-type="ios" lang="en">
-  <div>
-    <h3>Cab — Ride-Hailing & Delivery App</h3>
-    <p>
-      A full-featured ride-hailing and delivery platform with real-time driver tracking,
-      Google Maps integration, trip lifecycle, in-app chat with images & live location,
-      push notifications, and secure online payments via Tap. Built with Swift, MVVM,
-      Firebase, and Socket.IO.
-    </p>
-    <div class="meta">
-      <span class="tag">Swift</span>
-      <span class="tag">MVVM</span>
-      <span class="tag">Firebase</span>
-      <span class="tag">Socket.IO</span>
-      <span class="tag">Google Maps</span>
-      <span class="tag">Tap Payments</span>
-    </div>
-    <div class="links">
-      <a class="btn primary" href="https://apps.apple.com/eg/app/%D9%83%D8%A7%D8%A8-cab/id6472556895?l=ar" target="_blank" rel="noopener">App Store</a>
-      <!-- <a class="btn" href="#">Case Study</a>
-      <a class="btn" href="#">Code</a> -->
-    </div>
-  </div>
-
-  <!-- Phone video frame -->
-  <div class="thumb" style="max-width: 300px; margin: 0 auto;">
-    <div style="
-      width: 300px;
-      height: 600px;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    ">
-      <video controls playsinline style="width:100%; height:100%; object-fit: cover;">
-        <source src="videos/cab.mp4" type="video/mp4">
-        Your browser does not support video playback.
-      </video>
-    </div>
-  </div>
-</article>
-
-
-
-
-<!-- Tavolo APP -->
- 
-<article class="card project reveal" data-tags="ios swift mvvm reservations restaurants payments" data-type="ios" lang="en">
-  <div>
-    <h3>Tavolo — Restaurant Reservation App</h3>
-    <p>
-      A modern reservation app for discovering restaurants, browsing menus,
-      checking table availability in real-time, booking and managing reservations.
-      Features include user profiles, reviews, push notifications, and secure
-      online payments. Built with Swift and MVVM architecture.
-    </p>
-    <div class="meta">
-      <span class="tag">Swift</span>
-      <span class="tag">MVVM</span>
-      <span class="tag">Firebase</span>
-      <span class="tag">Reservations</span>
-      <span class="tag">Payments</span>
-    </div>
-    <div class="links">
-      <a class="btn primary" href="https://apps.apple.com/eg/app/tavolo/id6479755462?l=ar" target="_blank" rel="noopener">App Store</a>
-      <!-- <a class="btn" href="#">Case Study</a>
-      <a class="btn" href="#">Code</a> -->
-    </div>
-  </div>
-
-  <!-- Phone video frame -->
-  <div class="thumb" style="max-width: 300px; margin: 0 auto;">
-    <div style="
-      width: 300px;
-      height: 600px;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    ">
-      <video controls playsinline style="width:100%; height:100%; object-fit: cover;">
-        <source src="videos/Taflo.mp4" type="video/mp4">
-        Your browser does not support video playback.
-      </video>
-    </div>
-  </div>
-</article>
-
-
-<!-- Delivery APP -->
-<article class="card project reveal" data-tags="ios swift mvvm delivery ecommerce payments tracking" data-type="ios" lang="en">
-  <div>
-    <h3>Delivery App — Comprehensive Delivery Platform</h3>
-    <p>
-      A full-featured delivery platform designed for fast, secure, and user-friendly shopping.
-      Features include an extensive product catalog, customizable orders, real-time delivery tracking,
-      ratings & reviews, promotions, push notifications, secure payments, customer support.
-      Built with Swift and MVVM architecture.
-    </p>
-    <div class="meta">
-      <span class="tag">Swift</span>
-      <span class="tag">MVVM</span>
-      <span class="tag">Firebase</span>
-      <span class="tag">Payments</span>
-      <span class="tag">Real-time Tracking</span>
-      <span class="tag">E-commerce</span>
-    </div>
-    <div class="links">
-      <a class="btn primary" href="https://apps.apple.com/eg/developer/meshref-emam-attia-attia/id1255459078?l=ar" target="_blank" rel="noopener">App Store</a>
-      <!-- <a class="btn" href="#">Case Study</a>
-      <a class="btn" href="#">Code</a> -->
-    </div>
-  </div>
-
-
-
-
-  <!-- Phone video frame -->
-  <div class="thumb" style="max-width: 300px; margin: 0 auto;">
-    <div style="
-      width: 300px;
-      height: 600px;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    ">
-      <video controls playsinline style="width:100%; height:100%; object-fit: cover;">
-        <source src="videos/Delivery.mp4" type="video/mp4">
-        Your browser does not support video playback.
-      </video>
-    </div>
-  </div>
-</article>
-
-
-<!-- Al-Fatiha APP -->
-<article class="card project reveal" data-tags="ios swift mvc audio localization firebase" data-type="ios" lang="en">
-  <div>
-    <h3>Al-Fatiha App — Pronunciation Improvement</h3>
-    <p>
-      The Al-Fatiha app helps users enhance their pronunciation of Surat Al-Fatiha through expert
-      evaluation and accurate verse-by-verse listening. It supports error review, re-listening, and
-      continuous improvement for a better learning experience.
-      Key skills applied include MVC architecture, notifications, audio recording & playback,
-      text control, clickability, and localization. 
-      Technical expertise spans real-time chat integration, Firebase Messaging, networking, and 
-      advanced iOS app design.
-    </p>
-    <div class="meta">
-      <span class="tag">Swift</span>
-      <span class="tag">MVC</span>
-      <span class="tag">Audio</span>
-      <span class="tag">Localization</span>
-      <span class="tag">Firebase Messaging</span>
-      <span class="tag">Notifications</span>
-    </div>
-    <div class="links">
-      <a class="btn primary" href="https://apps.apple.com/eg/developer/meshref-emam-attia-attia/id1255459078?l=ar" target="_blank" rel="noopener">App Store</a>
-    </div>
-  </div>
-
-  <!-- Phone PDF slider frame -->
-  <div class="thumb" style="max-width: 300px; margin: 0 auto;">
-    <div style="
-      width: 300px;
-      height: 600px;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-      position: relative;
-    ">
-      <!-- Slider -->
-      <div id="alFatihaSlider" style="
-        display: flex;
-        width: 1000%; /* 10 صور */
-        height: 100%;
-        transition: transform 0.8s ease-in-out;
-      ">
-        <embed src="images/imge1.pdf" type="application/pdf" style="width:300px; height:600px; flex-shrink:0;">
-        <embed src="images/imge2.pdf" type="application/pdf" style="width:300px; height:600px; flex-shrink:0;">
-        <embed src="images/imge3.pdf" type="application/pdf" style="width:300px; height:600px; flex-shrink:0;">
-        <embed src="images/imge4.pdf" type="application/pdf" style="width:300px; height:600px; flex-shrink:0;">
-        <embed src="images/imge5.pdf" type="application/pdf" style="width:300px; height:600px; flex-shrink:0;">
-        <embed src="images/imge6.pdf" type="application/pdf" style="width:300px; height:600px; flex-shrink:0;">
-        <embed src="images/imge7.pdf" type="application/pdf" style="width:300px; height:600px; flex-shrink:0;">
-        <embed src="images/imge8.png" type="application/pdf" style="width:300px; height:600px; flex-shrink:0;">
-        <embed src="images/imge9.pdf" type="application/pdf" style="width:300px; height:600px; flex-shrink:0;">
-        <embed src="images/imge10.pdf" type="application/pdf" style="width:300px; height:600px; flex-shrink:0;">
       </div>
-    </div>
-  </div>
-</article>
+    </section>
 
-<script>
-  const slider = document.getElementById('alFatihaSlider');
-  let index = 0;
-  const totalSlides = 10; // عدد الصور
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="container">
+      <h2 class="sec-title reveal">Get In Touch</h2>
+      <p class="sec-sub reveal">Open to new opportunities, freelance projects, and collaborations.</p>
 
-  setInterval(() => {
-    index = (index + 1) % totalSlides;
-    slider.style.transform = `translateX(-${index * 300}px)`; 
-  }, 3000); // كل 3 ثواني يتغير
-</script>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <a class="contact-link" href="mailto:ali.mostafa.kassab2022@gmail.com" target="_blank" rel="noopener noreferrer">
+            <span class="icon">✉️</span>
+            <span>ali.mostafa.kassab2022@gmail.com</span>
+          </a>
+          <a class="contact-link" href="tel:+201120521552">
+            <span class="icon">📞</span>
+            <span>(+20) 1120521552</span>
+          </a>
+          <a class="contact-link" href="https://www.linkedin.com/in/ali-mostafa-b39b9a253" target="_blank" rel="noopener noreferrer">
+            <span class="icon">💼</span>
+            <span>LinkedIn — Ali Mostafa Hamdy</span>
+          </a>
+          <a class="contact-link" href="https://github.com/AliKssab" target="_blank" rel="noopener noreferrer">
+            <span class="icon">💻</span>
+            <span>GitHub — AliKssab</span>
+          </a>
+          <a class="contact-link" href="https://comforting-crisp-0fb289.netlify.app" target="_blank" rel="noopener noreferrer">
+            <span class="icon">🌐</span>
+            <span>Portfolio Website</span>
+          </a>
+          <a class="contact-link" href="AliMostafa_Ios_CV.docx" download>
+            <span class="icon">📄</span>
+            <span>Download Resume (DOCX)</span>
+          </a>
+        </div>
 
-<!-- See-My-Result APP -->
-<article class="card project reveal" data-tags="ios swift mvc webview healthcare" data-type="ios" lang="en">
-  <div>
-    <h3>See-My-Result App — Medical Test Results</h3>
-    <p>
-      A healthcare-focused app designed to analyze and display medical test results,
-      transforming findings into actionable medical advice to support patient well-being.
-      It leverages WebView technology to provide real-time access to crucial information,
-      streamlining communication between patients and healthcare professionals.
-      Built with Swift and MVC architecture to ensure clarity, maintainability,
-      and robust performance.
-    </p>
-    <div class="meta">
-      <span class="tag">Swift</span>
-      <span class="tag">MVC</span>
-      <span class="tag">WebView</span>
-      <span class="tag">Healthcare</span>
-    </div>
-    <div class="links">
-      <a class="btn primary" href="https://github.com/AliKssab/See-My-Result" target="_blank" rel="noopener">GitHub</a>
-    </div>
-  </div>
-
-  <!-- Phone video frame -->
-  <div class="thumb" style="max-width: 300px; margin: 0 auto;">
-    <div style="
-      width: 300px;
-      height: 600px;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    ">
-      <video controls playsinline style="width:100%; height:100%; object-fit: cover;">
-        <source src="videos/Reservations.mp4" type="video/mp4">
-        Your browser does not support video playback.
-      </video>
-    </div>
-  </div>
-</article>
-
- <!-- Alborg APP -->
-<article class="card project reveal" data-tags="ios swift mvc healthcare" data-type="ios" lang="en">
-  <div>
-    <h3>Alborg App — Medical Test & Diagnostics</h3>
-    <p>
-      Alborg is an innovative healthcare app designed to empower doctors and healthcare professionals 
-      with advanced tools for diagnostics, treatment planning, and real-time collaboration.  
-      It seamlessly integrates medical test results into the healthcare ecosystem, enabling 
-      personalized and precise recommendations for patients.  
-      With a user-friendly interface and robust architecture, Alborg enhances patient outcomes 
-      while streamlining workflows for medical professionals.  
-    </p>
-    <div class="meta">
-      <span class="tag">Swift</span>
-      <span class="tag">MVC</span>
-      <span class="tag">Healthcare</span>
-      <span class="tag">Diagnostics</span>
-    </div>
-    <div class="links">
-      <a class="btn primary" href="https://github.com/AliKssab/Albrg" target="_blank" rel="noopener">GitHub</a>
-    </div>
-  </div>
-
-  <!-- Phone video frame -->
-  <div class="thumb" style="max-width: 300px; margin: 0 auto;">
-    <div style="
-      width: 300px;
-      height: 600px;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    ">
-      <video controls playsinline style="width:100%; height:100%; object-fit: cover;">
-        <source src="videos/Medical.mp4" type="video/mp4">
-        Your browser does not support video playback.
-      </video>
-    </div>
-  </div>
-</article>
-
-
- <section id="competencies" style="width:100%; padding:60px 0;">
-  <div class="container">
-    <h2 class="sec-title">Core Competencies & Skills</h2>
-    <div class="skills reveal full-width">
-
-    <div class="skill"><span>Swift / SwiftUI / UIKit</span>&nbsp;<b>Expert</b></div>
-    <div class="skill"><span>Architecture (MVVM, MVVM-C, Clean Architecture, VIPER)</span><b>Advanced</b></div>
-    <div class="skill"><span>Concurrency (Async/Await, Combine, Operation Queue)</span><b>Advanced</b></div>
-    <div class="skill"><span>Realm / SwiftData</span><b>Advanced</b></div>
-    <div class="skill"><span>Socket.IO / Firebase</span><b>Advanced</b></div>
-    <div class="skill"><span>Google Maps SDK / Core Location</span><b>Advanced</b></div>
-    <div class="skill"><span>RxSwift & Reactive Programming</span><b>Advanced</b></div>
-    <div class="skill"><span>Performance Optimization & Instruments</span><b>Advanced</b></div>
-    <div class="skill"><span>Design Systems & Reusable Components</span><b>Advanced</b></div>
-    <div class="skill"><span>Version Control (Git)</span><b>Expert</b></div>
-    <div class="skill"><span>Jira</span><b>Advanced</b></div>
-  </div>
-</section>
- 
-
-<!-- </section> --> -->
-</section>
-<section id="experience" class="container">
-  <h2 class="sec-title">Experience</h2>
-
-  <div class="experience-item">
-    <h3>Senior iOS Developer — <span>Al Almiya Alhura</span></h3>
-    <div class="meta">
-      <span class="location">Remote</span> • 
-      <span class="period">January 2025 – Present</span>
-    </div>
-    <ul class="tasks">
-      <li>Developed new iOS applications from scratch with scalable and maintainable architecture.</li>
-      <li>Refactored and fixed legacy projects, ensuring compatibility with modern iOS versions.</li>
-      <li>Revived outdated apps that were no longer functional due to deprecated APIs and frameworks.</li>
-      <li>Mentored and trained junior developers, improving team efficiency and knowledge sharing.</li>
-      <li>Acted as the primary assistant to the Team Leader in project planning and technical decisions.</li>
-    </ul>
-  </div>
-
-  <div class="experience-item">
-    <h3>Mid-Level iOS Developer — <span>CAB</span></h3>
-    <div class="meta">
-      <span class="location">Saudi Arabia, Remote</span> • 
-      <span class="period">February 2024 – January 2025</span>
-    </div>
-    <ul class="tasks">
-      <li>Led the complete refactoring and re-development of the company’s main iOS application.</li>
-      <li>Improved code structure, performance, and maintainability following MVVM and SOLID principles.</li>
-      <li>Integrated advanced features such as real-time location tracking, notifications, and media handling.</li>
-      <li>Collaborated remotely with the Saudi Arabia-based team to align development with business needs.</li>
-    </ul>
-  </div>
-
-  <div class="experience-item">
-    <h3>Junior iOS Developer — <span>ALEXON</span></h3>
-    <div class="meta">
-      <span class="location">Egypt</span> • 
-      <span class="period">January 2023 – January 2024</span>
-    </div>
-    <ul class="tasks">
-      <li>Developed and maintained multiple iOS applications using Swift and UIKit.</li>
-      <li>Collaborated with team members to implement new features and fix critical bugs.</li>
-      <li>Deployed and published applications on the Apple App Store, ensuring compliance with Apple guidelines.</li>
-      <li>Improved app performance, usability, and reliability through continuous updates.</li>
-    </ul>
-  </div>
-
-  <div class="experience-item">
-    <h3>Junior iOS Developer — <span>Al-Fawadiya</span></h3>
-    <div class="meta">
-      <span class="location">Saudi Arabia, Remote</span> • 
-      <span class="period">June 2022 – December 2022</span>
-    </div>
-    <ul class="tasks">
-      <li>Developed and maintained iOS applications using Swift and UIKit.</li>
-      <li>Implemented new features and fixed bugs to improve app performance and usability.</li>
-      <li>Worked remotely with a cross-functional team in Saudi Arabia, following Agile practices.</li>
-    </ul>
-  </div>
-
-  <div class="experience-item">
-    <h3>Junior iOS Developer — <span>Al-Abdulaziz</span></h3>
-    <div class="meta">
-      <span class="period">January 2022 – May 2022</span>
-    </div>
-    <ul class="tasks">
-      <li>Contributed to the development of iOS applications using Swift.</li>
-      <li>Assisted in debugging and testing features to ensure high-quality performance.</li>
-      <li>Collaborated with senior developers to understand software development best practices.</li>
-    </ul>
-  </div>
-</section>
+        <div class="card reveal">
+          <form id="contactForm" novalidate>
+            <div class="field">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell me about your project…" required></textarea>
+            </div>
+            <button type="submit" class="btn primary" style="width:100%; justify-content:center;">Send Message 🚀</button>
+            <p id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
 
   </main>
 
+  <!-- ===== Footer ===== -->
   <footer>
-  <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;">
-    <span>© <span id="year"></span> Ali Mostafa. All rights reserved.</span>
-    <div style="display:flex; gap:12px;">
-      <a href="https://github.com/AliKssab" target="_blank" aria-label="GitHub">GitHub</a>
-      <a href="https://www.linkedin.com/in/ali-mostafa-b39b9a253" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Ali Mostafa Hamdy. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="https://github.com/AliKssab" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+        <a href="https://www.linkedin.com/in/ali-mostafa-b39b9a253" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+        <a href="mailto:ali.mostafa.kassab2022@gmail.com" aria-label="Email">Email</a>
+        <a href="tel:+201120521552" aria-label="Phone">(+20) 112 052 1552</a>
+      </div>
     </div>
-  </div>
-</footer>
-
+  </footer>
 
   <script>
-    // Theme toggle with localStorage
+    // ===== Theme Toggle =====
     const root = document.documentElement;
     const themeToggle = document.getElementById('themeToggle');
-    const storedTheme = localStorage.getItem('theme');
-    if (storedTheme === 'light') root.classList.add('light');
-    function setPressed() {
+    if (localStorage.getItem('theme') === 'light') root.classList.add('light');
+    function syncThemeBtn() {
       const isLight = root.classList.contains('light');
       themeToggle.setAttribute('aria-pressed', String(isLight));
       themeToggle.textContent = (isLight ? '☀️' : '🌙') + ' Theme';
     }
-    setPressed();
+    syncThemeBtn();
     themeToggle.addEventListener('click', () => {
       root.classList.toggle('light');
       localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
-      setPressed();
+      syncThemeBtn();
     });
 
-    // Smooth reveal on scroll
-    const io = new IntersectionObserver((entries) => {
+    // ===== Scroll Reveal =====
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
           e.target.classList.add('show');
-          io.unobserve(e.target);
+          revealObserver.unobserve(e.target);
         }
       });
-    }, { threshold: .15 });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // Project filtering
-    const filters = document.querySelectorAll('.chip');
-    const cards = document.querySelectorAll('.project');
-    filters.forEach(btn => btn.addEventListener('click', () => {
-      filters.forEach(b => b.setAttribute('aria-pressed', 'false'));
-      btn.setAttribute('aria-pressed', 'true');
-      const type = btn.dataset.filter;
-      cards.forEach(card => {
-        const show = type === 'all' || card.dataset.type === type;
-        card.style.display = show ? '' : 'none';
+    // ===== Al-Fatiha Image Slider =====
+    (function () {
+      const images = [
+        'images/imge8.png',
+        'images/imge1.pdf', 'images/imge2.pdf', 'images/imge3.pdf',
+        'images/imge4.pdf', 'images/imge5.pdf', 'images/imge6.pdf',
+        'images/imge7.pdf', 'images/imge9.pdf', 'images/imge10.pdf'
+      ];
+      // Only use the PNG since PDFs don't render as images
+      const validImages = ['images/imge8.png'];
+
+      const track = document.getElementById('alFatihaSlider');
+      const dotsContainer = document.getElementById('sliderDots');
+
+      // Populate track with valid image(s)
+      track.innerHTML = '';
+      validImages.forEach((src, i) => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = 'Al-Fatiha App Screenshot ' + (i + 1);
+        img.loading = 'lazy';
+        img.style.width = '100%';
+        img.style.height = '100%';
+        img.style.objectFit = 'cover';
+        img.style.flexShrink = '0';
+        track.appendChild(img);
       });
-    }));
 
-    // Simple contact handler (client-side demo)
+      // Build dots
+      validImages.forEach((_, i) => {
+        const dot = document.createElement('span');
+        if (i === 0) dot.classList.add('active');
+        dotsContainer.appendChild(dot);
+      });
+    })();
+
+    // ===== Contact Form (mailto fallback) =====
     const form = document.getElementById('contactForm');
     const status = document.getElementById('formStatus');
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const data = Object.fromEntries(new FormData(form).entries());
-      // TODO: Replace with your backend endpoint (fetch('/api/contact', { ... }))
-      status.textContent = 'Thanks, ' + (data.name || 'friend') + '! I\'ll get back to you soon.';
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+      if (!name || !email || !message) {
+        status.style.color = '#f87171';
+        status.textContent = 'Please fill in all fields.';
+        return;
+      }
+      const subject = encodeURIComponent('Portfolio Contact from ' + name);
+      const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
+      window.open('https://mail.google.com/mail/?view=cm&fs=1&to=ali.mostafa.kassab2022@gmail.com&su=' + subject + '&body=' + body, '_blank');
+      status.style.color = 'var(--primary)';
+      status.textContent = 'Thanks, ' + name + '! Opening your email client…';
       form.reset();
     });
 
-    // Footer year
+    // ===== Footer Year =====
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
